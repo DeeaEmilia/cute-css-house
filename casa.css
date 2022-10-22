@@ -1,0 +1,301 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(93, 138, 139);
+}
+
+.house {
+  width: 40em;
+  height: 30em;
+  background: rgba(206, 204, 204, 0);
+  position: relative;
+}
+
+.chimney {
+  position: relative;
+  width: 86px;
+  height: 117px;
+  background: rgb(236, 205, 221);
+  left: 6em;
+  top: -3em;
+  box-shadow: 0px 16px 10px -17px rgba(0, 0, 0, 0.5);
+}
+
+.chim {
+  position: relative;
+  width: 110px;
+  height: 25px;
+  background: rgb(214, 174, 195);
+  left: 5.2em;
+  top: -11em;
+  box-shadow: 0px 16px 10px -17px rgba(0, 0, 0, 0.5);
+}
+
+.roof {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 19em solid transparent;
+  border-right: 19em solid transparent;
+  border-bottom: 13em solid rgb(214, 174, 195);
+  left: 1em;
+  top: -16em;
+  overflow: hidden;
+  box-shadow: 0px 16px 10px -17px rgba(0, 0, 0, 0.5);
+}
+
+.window {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  background: rgb(253, 253, 230);
+  border-radius: 17%;
+}
+
+#left {
+  left: 11em;
+  top: -34em;
+}
+
+#right {
+  left: 25.5em;
+  top: -38em;
+}
+
+.wall {
+  position: relative;
+  width: 370px;
+  height: 200px;
+  border: 3px solid rgba(148, 148, 148, 0.103);
+  background: rgb(196, 191, 191);
+  left: 9em;
+  top: -16em;
+  box-shadow: 0px 16px 10px -17px rgba(0, 0, 0, 0.5);
+}
+
+.door {
+  position: relative;
+  width: 6em;
+  height: 6.8em;
+  background: rgb(243, 239, 242);
+  left: 17.5em;
+  top: -22.8em;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+.door-knob {
+  position: relative;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.068);
+  border-radius: 50%;
+  background: rgb(148, 147, 147);
+  left: 22em;
+  top: -26em;
+}
+
+.window:hover {
+  background-color: rgb(102, 124, 146);
+  box-shadow: inset 0px 0px 20px 12px #526b7cd5,
+    inset 0px 0px 10px 12px #385569d5;
+}
+
+.door:active {
+  background-color: rgb(196, 94, 94);
+  box-shadow: 0px 0px 10px 12px #f7e6e8d5;
+}
+
+.door:hover {
+  background-color: rgb(235, 130, 130);
+}
+
+span {
+  background: linear-gradient(rgb(0, 0, 0), rgb(104, 104, 104), rgb(34, 30, 30), rgb(12, 11, 11));
+  filter: blur(10px);
+  animation: smokeRotationAnimation 1s linear infinite
+}
+
+.smoke {
+  position: relative;
+  animation: smokeAnimation 15000ms linear infinite;
+}
+
+@keyframes smokeAnimation {
+  0%, 100% {
+    bottom: 0%;
+  }
+  50% {
+    bottom: 10%;
+  }
+}
+
+@keyframes smokeRotationAnimation {
+   10% {
+  transform: rotateY(0deg);
+}
+
+50% {
+  transform: rotateY(10deg);
+}
+
+100% {
+  transform: rotateY(0deg);
+}
+}
+
+.sun {
+  position: relative;
+  top: -20em;
+  left: 5em;
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+  background-color: orange;
+  box-shadow: inset 0px 0px 10px 12px #f7a63cd5,
+    0px 0px 20px 16px hsl(43, 97%, 75%),
+    0px 0px 30px 16px hsl(43, 83%, 82%);
+}
+
+.cloud {
+  position: relative;
+  top: -15em;
+  background: white;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(6px);
+  z-index: 11;
+  left: -50px;
+  animation: 15000ms cloudAnimation linear infinite;
+  opacity: 0.76;
+}
+
+.cloud:before {
+  content: "";
+  display: inline-block;
+  background: white;
+  width: 100px;
+  height: 100px;
+  filter: blur(3px);
+  position: relative;
+  border-radius: 50%;
+  top: -30px;
+  left: 60px;
+}
+
+.cloud:after {
+  content: "";
+  display: inline-block;
+  background: white;
+  width: 200px;
+  height: 100px;
+  filter: blur(3px);
+  position: relative;
+  border-radius: 50%;
+  top: -80px;
+  left: 70px;
+}
+
+.cloud:first-child {
+  zoom: 1.5;
+}
+
+@keyframes cloudAnimation {
+  0% {
+    transform: translate(-100px, 0);
+  }
+
+  100% {
+    transform: translate(600px, 0);
+  }
+}
+
+:root {
+  --flower: #f5e949;
+  --stem: #51d691;
+}
+
+.flower {
+  position: relative;
+  top: 11em;
+  left: -14em;
+
+}
+
+.flower__head {
+  width: 60px;
+  height: 20px;
+  border-radius: 20px;
+  background: var(--flower);
+  margin-top: 50px;
+  animation: flowerAnimation 7s infinite;
+}
+
+.flower__head::after,
+.flower__head::before {
+  content: '';
+  position: absolute;
+  background: var(--flower);
+  border-radius: 20px;
+  width: 60px;
+  height: 20px;
+  transform: rotate(60deg);
+}
+
+.flower__head::before {
+  transform: rotate(-60deg);
+}
+
+@keyframes flowerAnimation {
+  10% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(250deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.flower__stem {
+  position: absolute;
+  height: 150px;
+  width: 8px;
+  background: var(--stem);
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.flower__leaf {
+  width: 30px;
+  height: 30px;
+  background: var(--stem);
+  position: absolute;
+  top: 130px;
+  left: 21px;
+  border-radius: 50px;
+  border-top-right-radius: 0;
+  transform: var(--transform-leaves-left);
+}
+
+.flower__leaf--shadow {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.25);
+  height: 15px;
+  width: 15px;
+  top: 144px;
+  left: 29px;
+  border-radius: 50px;
+  border-top-right-radius: 0;
+  transform: var(--transform-leaves-left);
+}
